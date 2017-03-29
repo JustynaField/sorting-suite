@@ -55,6 +55,5 @@ describe('TDD with bubbleSort', () => {
     assert.deepEqual(bubbleSort(array), ["fish & chips", "milk and honey", "sweet dreams"])
   })
 
-//should sort objects
 
 })
