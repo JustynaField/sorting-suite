@@ -1,4 +1,4 @@
-const bubbleSort = (array) => {
+export const bubbleSort = array => {
 
   for (let i = 0; i < array.length; i++) {
     for (let j = 1; j < array.length; j++) {
@@ -18,6 +18,3 @@ const bubbleSort = (array) => {
   }
   return array
 }
-
-
-module.exports = bubbleSort

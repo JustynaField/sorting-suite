@@ -1,5 +1,5 @@
-const insertionSort = require('../scripts/insertionSort')
-const assert = require('chai').assert
+import {insertionSort} from '../scripts/insertionSort'
+import {assert} from 'chai'
 
 describe('TDD with insertionSort', () => {
 
@@ -8,7 +8,7 @@ describe('TDD with insertionSort', () => {
   })
 
   it('should sort an array of letters', () => {
-    let array = ["d", "f", "b", "a", "c", "e",];
+    let array = ["d", "f", "b", "a", "c", "e"]
 
     assert.deepEqual(insertionSort(array), ["a", "b", "c", "d", "e", "f"]);
   })
@@ -23,6 +23,12 @@ describe('TDD with insertionSort', () => {
     let array = [-4, -5, -2, -7, -3, -1, -6]
 
     assert.deepEqual(insertionSort(array), [-7, -6, -5, -4, -3, -2, -1])
+  })
+
+  it('should sort an array that contains both positive and negative values', () => {
+    let array = [5, -7, 2, -3, -1, 4, 0]
+
+    assert.deepEqual(insertionSort(array), [-7, -3, -1, 0, 2, 4, 5])
   })
 
   it('should sort an array when there are duplicate numbers inside the array', () => {
@@ -41,6 +47,18 @@ describe('TDD with insertionSort', () => {
     let array = []
 
     assert.deepEqual(insertionSort(array), [])
+  })
+
+  it('should not break if array is already sorted', () => {
+    let array = [1, 2, 3, 4, 5]
+
+    assert.deepEqual(insertionSort(array), [1, 2, 3, 4, 5])
+  })
+
+  it('should not break if there is only one item in the array',  () => {
+    let array = [1]
+
+    assert.deepEqual(insertionSort(array), [1])
   })
 
   it('should sort words alphabetically', () => {

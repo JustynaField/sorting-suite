@@ -1,4 +1,4 @@
-const insertionSort = (array) => {
+export const insertionSort = (array) => {
 
   for (let i = 1; i < array.length; i++) {
 
@@ -42,6 +42,3 @@ const insertionSort = (array) => {
 //   }
 //   return orderedArray
 // }
-
-
-module.exports = insertionSort

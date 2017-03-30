@@ -1,5 +1,5 @@
-const bubbleSort = require('../scripts/bubbleSort')
-const assert = require('chai').assert
+import {bubbleSort} from '../scripts/bubbleSort'
+import {assert} from 'chai'
 
 describe('TDD with bubbleSort', () => {
 
@@ -8,7 +8,7 @@ describe('TDD with bubbleSort', () => {
   })
 
   it('should sort an array of letters', () => {
-    let array = ["d", "f", "b", "a", "c", "e",];
+    let array = ["d", "f", "b", "a", "c", "e"]
 
     assert.deepEqual(bubbleSort(array), ["a", "b", "c", "d", "e", "f"]);
   })
@@ -23,6 +23,12 @@ describe('TDD with bubbleSort', () => {
     let array = [-4, -5, -2, -7, -3, -1, -6]
 
     assert.deepEqual(bubbleSort(array), [-7, -6, -5, -4, -3, -2, -1])
+  })
+
+  it('should sort an array that contains both positive and negative values', () => {
+    let array = [5, -7, 2, -3, -1, 4, 0]
+
+    assert.deepEqual(bubbleSort(array), [-7, -3, -1, 0, 2, 4, 5])
   })
 
   it('should sort an array when there are duplicate numbers inside the array', () => {
@@ -43,6 +49,18 @@ describe('TDD with bubbleSort', () => {
     assert.deepEqual(bubbleSort(array), [])
   })
 
+  it('should not break if array is already sorted', () => {
+    let array = [1, 2, 3, 4, 5]
+
+    assert.deepEqual(bubbleSort(array), [1, 2, 3, 4, 5])
+  })
+
+  it('should not break if there is only one item in the array',  () => {
+    let array = [1]
+
+    assert.deepEqual(bubbleSort(array), [1])
+  })
+
   it('should sort words alphabetically', () => {
     let array = ["sugar", "bread", "potatoes", "eggs", "milk"]
 
@@ -54,6 +72,5 @@ describe('TDD with bubbleSort', () => {
 
     assert.deepEqual(bubbleSort(array), ["fish & chips", "milk and honey", "sweet dreams"])
   })
-
 
 })
